@@ -1,0 +1,18 @@
+<inventory>
+    <Product pantone="100" Yellow="7.4" Yellow02="35" Orange="24" wred="7.4" othirtytwo="3" Rubine="5" Rhodamin="3" Purple="35" 
+             Violet="7.4" oseventytwo="35" Reflex="24" Reflex02="24" Blue="35" Green="24" 
+             Black="7.4" White="35"> 
+    </Product>
+
+    <Product pantone="101" Yellow="5" Yellow02="3" Orange="0" wred="1" othirtytwo="5" Rubine="0" Rhodamin="3" Purple="3" 
+              Violet="0" oseventytwo="35" Reflex="5" Reflex02="0" Blue="0" Green="0" 
+              Black="7.4" White="35"> 
+    </Product>
+    
+    <Product pantone="1345" Yellow="7.4" Yellow02="0" Orange="0" wred="1.7" othirtytwo="0" Rubine="0" Rhodamin="0" Purple="0" 
+                  Violet="0" oseventytwo="0" Reflex="0" Reflex02="0" Blue="0" Green="0" 
+                  Black="0" White="90"> 
+    </Product>
+
+
+</inventory>

@@ -11,9 +11,11 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.DOMException;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -34,27 +36,48 @@ import org.xml.sax.SAXException;
  */
 public class SearchXML {
 
-    public static void main(String args[]) throws Exception {
-        
-        		try {
-			Document doc = DocumentBuilderFactory.newInstance()
-					.newDocumentBuilder()
-					.parse(SearchXML.class.getResourceAsStream("data.xml"));
-			XPath xpath = XPathFactory.newInstance().newXPath();
-			// 1
-			System.out.println(((Node) xpath.evaluate(
-					"/inventory/Product[@pantone='100']", doc, XPathConstants.NODE))
-					.getAttributes().getNamedItem("pantone"));
-			// 2, 3
-			NodeList nodes = (NodeList) xpath.evaluate(
-					"/inventory/Product/", doc,
-					XPathConstants.NODESET);
-			for (int i = 0; i < nodes.getLength(); i++)
-				System.out.println(nodes.item(i).getTextContent());
-		} catch (ParserConfigurationException | SAXException | IOException | XPathExpressionException | DOMException e) {
-			System.out.println("Error ocurred while parsing XML.");
-		}
+    public static void main(String[] args)
+            throws ParserConfigurationException, SAXException,
+            IOException, XPathExpressionException {
+
+        DocumentBuilderFactory domFactory
+                = DocumentBuilderFactory.newInstance();
+        domFactory.setNamespaceAware(true);
+        DocumentBuilder builder = domFactory.newDocumentBuilder();
+        Document doc = builder.parse("data.xml");
+        XPath xpath = XPathFactory.newInstance().newXPath();
+        // XPath Query for showing all nodes value
+        XPathExpression expr = xpath.compile("/inventory/Product[@pantone='105']");
+
+        Object result = expr.evaluate(doc, XPathConstants.NODESET);
+        NodeList nodes = (NodeList) result;
+
+        for (int i = 0; i < nodes.getLength(); i++) {
+            NamedNodeMap a = nodes.item(i).getAttributes();
+            Node pantone = nodes.item(i);
+            Element pantoneElement = (Element) pantone;
+            //System.out.println(a.item(j));
+            //System.out.println(a.item(j).getNodeName()); //get only the name of the node
+            //System.out.println(a.item(j).getNodeValue()); //get only the value of the node
+            System.out.println("Pantone: " + pantoneElement.getAttribute("pantone"));
+            System.out.println("Blue: " + pantoneElement.getAttribute("blue"));
+            System.out.println("Red: " + pantoneElement.getAttribute("red"));
+            System.out.println("Orange: " + pantoneElement.getAttribute("orange"));
+            System.out.println("White: " + pantoneElement.getAttribute("white"));
+            System.out.println("Purple: " + pantoneElement.getAttribute("purple"));
+            System.out.println("Green: " + pantoneElement.getAttribute("green"));
+            System.out.println("Black: " + pantoneElement.getAttribute("black"));
+            System.out.println("Rubine: " + pantoneElement.getAttribute("rubine"));
+           
+            //String x = pantoneElement.getAttribute("rubine");
+            //System.out.println(x);
+            //System.out.println(a.item(j));
+            //System.out.println(a.item(i));
+            
+
+        }
 
     }
+
 
 }//end class
