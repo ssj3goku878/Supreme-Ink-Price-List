@@ -1,0 +1,35 @@
+//Create a Java program where the user can search for a part numer in this xml file called inventory.xml
+//example would be:
+//input: c100
+//output: Yellow: 7.93 Rubine:22.2 
+
+
+<Inventory>
+    
+    <c100> //part number
+        <yellow>7.93</yellow>
+        <rubine>22.2</rubine>
+    </c100>
+    
+    <c101>
+        <yellow>7.93</yellow>
+        <rubine>22.2</rubine>
+        <black>34.2</black>
+    </c101>
+
+    <c102>
+        <yellow>7.93</yellow>
+        <rubine>22.2</rubine>
+        <black>34.2</black>
+    </c102>
+    
+    <c103>
+        <reflex>3.24</reflex>
+        <yellow>32.</yellow>
+        <black>3</black>
+        <blue>5</blue>
+    </c103>
+
+</Inventory>
+
+

@@ -1,0 +1,10 @@
+<inventory>
+    
+    <Product> pantone="100" blue="7.4" red="35" green="24" </Product>
+    <Product> pantone="101" blue="5.4" rubine="35" purple"24" </Product>
+    <Product> pantone="102" orange="5.4" purple="35" white"24" </Product>
+    <Product> pantone="103" orange="5.4" purple="35" white"24" </Product>
+    <Product> pantone="104" orange="5.4" purple="35" white"24" </Product>
+    <Product> pantone="105" orange="5.4" purple="35" white"24" </Product>
+
+</inventory>

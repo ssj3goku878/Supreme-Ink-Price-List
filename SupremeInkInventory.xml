@@ -1,0 +1,22 @@
+<SupremeInkInventory> 
+
+<Product id="100">
+<black>7.5</black>
+<yellow>90</yellow>
+<blue>32</blue>
+</Product> 
+
+<Product id="101">
+<black>10</black>
+<blue>8</blue>
+</Product> 
+
+<Product id="102">
+
+</Product> 
+
+<Product id="103">
+
+</Product> 
+
+</SupremeInkInventory>
